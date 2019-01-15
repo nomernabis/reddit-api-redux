@@ -19,7 +19,7 @@ function posts(state={items: [], isFetching: false, didInvalidated: false}, acti
         case INVALIDATE_POSTS:
             return {...state, didInvalidated: true}
         case RECEIVE_POSTS:
-            return {...state, isFetching: false, didInvalidated: false, items: action.posts}
+            return {...state, isFetching: false, didInvalidated: false, items: action.posts, lastUpdated: action.receivedAt}
         default:
             return state
     }
